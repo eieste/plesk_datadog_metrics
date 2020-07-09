@@ -21,7 +21,7 @@ SQL;
 $q = mysqli_query($conn, $sql);
 $global_stats = array('total' => 0);
 
-while ($domain = mysqli_fetch_row($conn, $q)) {
+while ($domain = mysqli_fetch_row($q)) {
 
 	$domain = $domain[0];
 
