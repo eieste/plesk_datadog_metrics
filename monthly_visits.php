@@ -18,11 +18,10 @@ FROM
     domains
 SQL;
 
-$q = mysql_query($sql);
-
+$q = mysqli_query($conn, $sql);
 $global_stats = array('total' => 0);
 
-while ($domain = mysql_fetch_row($q)) {
+while ($domain = mysqli_fetch_row($conn, $q)) {
 
 	$domain = $domain[0];
 
