@@ -30,9 +30,9 @@ GROUP BY
 	domains.name
 SQL;
 
-$q = mysql_query($sql);
+$q = mysqli_query($conn, $sql);
 
-while ($domain = mysql_fetch_assoc($q)) {
+while ($domain = mysqli_fetch_assoc($conn, $q)) {
     $domain['traffic_total'] = $domain['traffic_total'] / 1024 / 1024; //Send in MB
     DataDogStatsD::gauge('plesk.traffic.domains', $domain['traffic_total'], 1, array($domain['domain'], date('F')));
 }
