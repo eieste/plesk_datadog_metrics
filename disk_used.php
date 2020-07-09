@@ -9,7 +9,9 @@
  * @license http://www.gnu.org/copyleft/gpl.html
  */
 
-include 'init.php';
+if (basename(__FILE__) == basename($_SERVER["SCRIPT_FILENAME"])) {
+    include 'init.php';
+}
 
 $allocated = disk_total_space('/') - disk_free_space('/');
 $allocated = ceil($allocated / (1024*1024));
