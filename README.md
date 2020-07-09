@@ -25,7 +25,7 @@ Run them with cron jobs
 
 The scripts are intended to be launched by cron jobs like this:
 
-    * 0 * * * php /path/to/your/scripts/traffic_domain_month.php
+    * 0 * * * php /path/to/your/scripts/daily.php
 
 With this example, the cron job would send data about traffic per domain to Datadog each day at 0:00AM.
 
