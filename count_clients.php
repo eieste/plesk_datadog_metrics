@@ -8,8 +8,9 @@
  * @author Israel Viana isra00@gmail.com
  * @license http://www.gnu.org/copyleft/gpl.html
  */
-
-include 'init.php';
+if (basename(__FILE__) == basename($_SERVER["SCRIPT_FILENAME"])) {
+    include 'init.php';
+}
 
 $sql = <<<SQL
 SELECT
