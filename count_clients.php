@@ -18,6 +18,6 @@ FROM
     clients
 SQL;
 
-$q = mysql_query($sql);
-$count = mysql_fetch_assoc($q);
+$q = mysqli_query($conn, $sql);
+$count = mysqli_fetch_assoc($q);
 DataDogStatsD::gauge('plesk.clients.count', $count['count']);
