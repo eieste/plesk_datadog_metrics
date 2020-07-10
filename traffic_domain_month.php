@@ -36,5 +36,5 @@ $q = mysqli_query($conn, $sql);
 
 while ($domain = mysqli_fetch_assoc($q)) {
     $domain['traffic_total'] = $domain['traffic_total'] / 1024 / 1024; //Send in MB
-    DataDogStatsD::gauge('plesk.traffic.domains', $domain['traffic_total'], 1, array($domain['domain'], date('F')));
+    DataDogStatsD::gauge('plesk.traffic.domains', $domain['traffic_total'], 1, array("domain" => $domain['domain'], "month"=>date('F')));
 }
